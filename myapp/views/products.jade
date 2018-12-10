@@ -1,0 +1,29 @@
+include ./header.jade
+
+block content
+  table(border="1")
+    tr
+      th  제품번호
+      th  제품명
+      th  가격
+      th  제품 설명
+      th  수정
+      th  삭제
+
+    -for(i=0; i<rows.length; i++){
+    tr
+      td  #{rows[i].id}
+      td  #{rows[i].name}
+      td  #{rows[i].price}
+      td  #{rows[i].description}
+      td
+        a(href='/#{rows[i].id}/edit') edit
+      td
+        form(action="/", method="post")
+          input(type="hidden", name="id", value="#{rows[i].id}")
+          input(type="submit", value="delete")
+    -}
+
+
+
+include ./footer.jade

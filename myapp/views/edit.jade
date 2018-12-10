@@ -1,0 +1,16 @@
+block content
+  h1 제품 정보 수정
+  form(action='/#{products.id}/edit', method="post")
+    table
+      tr
+        td
+          input(type="text", name="name", value="#{products.name}")
+      tr
+        td
+          input(type="text", name="price", value="#{products.price}")
+      tr
+        td
+          textarea(type="text", name="description") #{products.description}
+    input(type="submit",value="수정하기")
+
+include ./footer.jade

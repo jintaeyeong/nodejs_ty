@@ -1,0 +1,22 @@
+include ./header.jade
+
+block content
+  h2  제품 추가
+  form(action="/create", method="post")
+    table
+      tr
+        td
+          input(type="text", name="name", placeholder="제품명을 입력하세요.")
+      tr
+        td
+          input(type="text", name="price", placeholder="가격을 입력하세요.")
+      tr
+        td
+          textarea(type="text", name="description", placeholder="제품설명",cols="50",rows="5")
+
+    input(type="submit",value="추가하기")
+
+  p
+    a(href="/products") 제품 보기
+
+include ./footer.jade
